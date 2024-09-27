@@ -1,5 +1,6 @@
 package com.example.calculator_aues.views
 
+import android.widget.EditText
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.calculator_aues.models.MathOperations
@@ -20,5 +21,9 @@ class CalculatorViewModel : ViewModel() {
     fun clearAll() {
         previousNumber.value = 0.0
         result.value = 0.0
+    }
+
+    fun addNewPrevElement(currentNumber: Double) {
+        previousNumber.value = currentNumber
     }
 }

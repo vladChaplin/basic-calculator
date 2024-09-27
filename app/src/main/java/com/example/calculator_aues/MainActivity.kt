@@ -49,6 +49,7 @@ class MainActivity : ComponentActivity() {
         findViewById<Button>(R.id.button_modulo).setOnClickListener { onOperation("%", numberInput)}
         findViewById<Button>(R.id.button_power).setOnClickListener { onOperation("^", numberInput)}
         findViewById<Button>(R.id.button_clear).setOnClickListener { viewModel.clearAll() }
+        findViewById<Button>(R.id.button_add_elem).setOnClickListener { addNewPreviewElement(numberInput) }
     }
 
     private fun onOperation(operation: String, numberInput: EditText) {
@@ -57,6 +58,13 @@ class MainActivity : ComponentActivity() {
         if(currentNumber == null) return
 
         viewModel.calculate(operation, currentNumber);
+        numberInput.text.clear()
+    }
+
+    private fun addNewPreviewElement(numberInput: EditText) {
+        val currentNumber = numberInput.text.toString().toDouble()
+        viewModel.addNewPrevElement(currentNumber)
+
         numberInput.text.clear()
     }
 
