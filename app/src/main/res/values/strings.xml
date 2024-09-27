@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">calculator_aues</string>
+    <string name="input_number">Введите число</string>
+</resources>
